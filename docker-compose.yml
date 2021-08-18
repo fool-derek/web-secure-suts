@@ -1,0 +1,23 @@
+version: "3"
+services:
+  webgoat8:
+    container_name: webgoat8
+    image: "webgoat/goatandwolf"
+    hostname: webgoat8
+    ports:
+      - "127.0.0.1:9080:8080"
+      - "127.0.0.1:9081:9090"
+    environment:
+        TZ: Europe/Amsterdam
+  web-dvwa:
+    container_name: web-dvwa
+    image: "vulnerables/web-dvwa"
+    hostname: web-dvwa
+    ports:
+      - "127.0.0.1:9090:80"
+  pikachu:
+    container_name: pikachu
+    image: "foolderek/pikachu"
+    hostname: pikachu
+    ports:
+      - "127.0.0.1:9100:80"
